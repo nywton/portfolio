@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <!-- SEO Meta Tags -->
+  <!-- Seo Meta Tags -->
   <meta name="description" 
         content="Passionate about solving modern challenges by building meaningful products">
   <meta name="keywords" content="developer, designer, software engineer, work, portfolio">
@@ -30,22 +30,33 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- CSS -->
+  <!-- Css -->
    <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/transition.min.css"/>
+
 
 </head>
-<body class="flex">
+<body class="flex dark">
   <!-- Header -->
   <header class="items-center">
     <div>
-      <img width="120px" src="assets/images/logo.svg" />
+      <a class="logo">Nywton</h1>
     </div>
   </header>
 
   <!-- Main Content -->
   <main class="flex justify-center">
-    <section class="flex items-center gap-20">
-      <img src="assets/images/gifs/logo-animated-2.gif" />
+    <section class="flex items-center gap-10">
+      <div class="main__logo">
+        <img width="60px" class="ld ld-spring-btt-in" src="assets/icons/terminal.svg" alt="">
+        <img class="hidden" width="60px" class="ld ld-spring-btt-in" src="assets/icons/block-game.svg" alt=""> 
+        <img class="hidden" width="60px" class="ld ld-spring-btt-in" src="assets/icons/computer-programming.svg" alt=""> 
+        <img class="hidden" width="60px" class="ld ld-spring-btt-in" src="assets/icons/bulb-charging.svg" alt="">
+        <img class="hidden" width="60px" class="ld ld-spring-btt-in" src="assets/icons/hierarchy.svg" alt="">
+        <img class="hidden" width="60px" class="ld ld-spring-btt-in" src="assets/icons/mouse.svg" alt="">
+        <img class="hidden" width="60px" class="ld ld-spring-btt-in" src="assets/icons/paint-board.svg" alt="">
+        <img class="hidden" width="60px" class="ld ld-spring-btt-in" src="assets/icons/rocket.svg" alt="">
+      </div>     
       <a href="https://nywton.github.io/resume" class="btn-secondary">Get Started</a>
     </section>
   </main>
@@ -56,5 +67,28 @@
       <p>&copy; 2024 Engineer from Brazil.</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.main__logo img');
+      let currentIndex = 0;
+  
+      // Function to show current image and hide others
+      function showImage(index) {
+        images.forEach((img, i) => {
+          img.classList.toggle('hidden', i !== index);
+        });
+      }
+  
+      // Initially show the first image
+      showImage(currentIndex);
+  
+      // Set interval to change image every 1 second
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
