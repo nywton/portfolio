@@ -12,7 +12,7 @@
 } */
 
 :root {
-  --ff: "Syne", sans-serif;
+  --ff: "Montserrat", sans-serif;
   --color-primary: hsl(250, 50%, 90%);
   --color-secondary: hsl(250, 50%, 10%);
   --color-tertiary: hsl(310, 80%, 20%);
@@ -38,7 +38,8 @@ body {
   background-color: var(--color-primary);
   color: var(--color-tertiary);
   font-family: var(--ff);
-  padding: 16px;
+  padding: .5rem;
+  margin: 0 auto;
   max-width: 1280px;
   height: 100vh;
   height: -webkit-fill-available;
@@ -52,17 +53,28 @@ main {
   align-items: center;
 }
 
-main .main__logo {
-  display: grid;
-  border-radius: 100px;
-  padding: 40px;
-  min-width: 60px;
-  min-height: 60px;
+main .main__img {
+  display: flex;
+  border-radius: 100%;
+  padding: 3rem;
   background-color: var(--color-pre-primary);
+  transition: 0.15s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.main__logo svg {
-  place-self: center;
+main .main__img:hover {
+  background-color: #333;
+}
+
+svg * {
+  stroke: red;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: .75rem;
 }
 
 /* Logo */
@@ -76,21 +88,30 @@ header .logo {
 
 .btn-secondary {
   color: var(--color-tertiary);
-  letter-spacing: 1px;
+  letter-spacing: 0.25rem;
   border: 1px solid var(--color-tertiary); 
   border-radius: 8px;
   padding: 16px 48px;
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-secondary:hover {
-  padding: 20px 52px;
-  background-color: var(--color-accent);
-  color: var(--colorsecondary);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: 0.15s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
+}
+
+#dark {
+  width: 12px;
+  fill: var(--color-secondary);
+  cursor: pointer;
+  background: var(--color-pre-primary);
+  padding: 8px 11px;
+  border-radius: 20px;
+  box-shadow: 0 2px 2px hsla(var(--hue), 50%, 10%, .3), 0 4px 4px hsla(var(--hue), 50%, 10%, .15);
 }
 
 /* Layout */
