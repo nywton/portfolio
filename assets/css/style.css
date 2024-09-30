@@ -3,17 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 
 /* Variables */
-/* :root {
-  --ff: "Montserrat", sans-serif;
-  --colorprimary: #ffffff;
-  --colorsecondary: #333333;
-  --coloraccent: #FFE537;
-  --h1: bold 64px/72px var(--ff);
-} */
 
 :root {
   --ff: "Montserrat", sans-serif;
   --color-primary: hsl(250, 50%, 90%);
+  --color-pre-primary: rgb(238, 236, 249);
   --color-secondary: hsl(250, 50%, 10%);
   --color-tertiary: hsl(310, 80%, 20%);
   --color-accent: hsl(190, 80%, 20%);
@@ -43,6 +37,7 @@ body {
   max-width: 1280px;
   height: 100vh;
   height: -webkit-fill-available;
+  transition: background-color 1s ease;
 }
 
 main {
@@ -62,12 +57,16 @@ main .main__img {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-main .main__img:hover {
-  background-color: #333;
+main .main__img svg * {
+  stroke: var(--color-tertiary);
 }
 
-svg * {
-  stroke: red;
+main .main__img:hover {
+  background-color: var(--color-primary);
+}
+
+main .main__img:hover svg * {
+  stroke: var(--color-accent);
 }
 
 
@@ -100,6 +99,7 @@ header .logo {
 
 .btn-secondary:hover {
   background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
   color: var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
