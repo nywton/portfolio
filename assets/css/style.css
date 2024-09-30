@@ -28,18 +28,28 @@
 
 /* Root tags */
 
+html {
+  /* fixes mobile viewport on browsers */
+  height: -webkit-fill-available;
+}
+
 body {
+  display: flex;
   background-color: var(--color-primary);
   color: var(--color-tertiary);
   font-family: var(--ff);
   padding: 16px;
   max-width: 1280px;
-  margin: auto;
+  height: 100vh;
+  height: -webkit-fill-available;
 }
 
 main {
   margin: 0 auto;
-  height: 85dvh
+  flex: 1;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
 main .main__logo {
