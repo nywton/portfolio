@@ -78,7 +78,7 @@ header .logo-container svg {
 
 #nav-controls svg * {
   stroke: var(--color-secondary);
-  fill: var(--color-secondary);
+  /* fill: var(--color-secondary); */
 }
 
 header .logo-container svg * {

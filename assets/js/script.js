@@ -18,4 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function dark() {
   document.body.classList.toggle("dark");
+  toggleVisibility();
+}
+
+function toggleVisibility() {
+  const btnLight = document.getElementById('btn-switch-light');
+  const btnDark = document.getElementById('btn-switch-dark');
+
+  // Toggle the 'hidden' class on both elements
+  btnLight.classList.toggle('hidden');
+  btnDark.classList.toggle('hidden');
 }
