@@ -1,9 +1,9 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 
+/* logo */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 /* Variables */
-
 :root {
   --ff: "Montserrat", sans-serif;
   --color-primary: hsl(250, 50%, 90%);
@@ -21,7 +21,6 @@
 }
 
 /* Root tags */
-
 html {
   /* fixes mobile viewport on browsers */
   height: -webkit-fill-available;
@@ -37,7 +36,27 @@ body {
   max-width: 1280px;
   height: 100vh;
   height: -webkit-fill-available;
-  transition: background-color 1s ease;
+  transition: background-color 1s ease-in;
+}
+
+header a {
+  font-weight: 600;
+  font-family: "Fredoka", sans-serif !important;
+}
+
+header .logo-container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+header .logo-container svg {
+  width: 24px;
+  height: 24px;
+}
+
+header .logo-container svg * {
+  fill: var(--color-accent);
 }
 
 main {
@@ -50,8 +69,11 @@ main {
 
 main .main__img {
   display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
-  padding: 3rem;
+  width: 144px;
+  height: 144px;
   background-color: var(--color-pre-primary);
   transition: 0.15s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -75,13 +97,6 @@ header {
   display: flex;
   justify-content: space-between;
   padding: .75rem;
-}
-
-/* Logo */
-header .logo {
-  font: 600 1rem / 1em var(--ff);
-  color: var(--accent-color);
-  text-decoration: none;
 }
 
 /* Components */
