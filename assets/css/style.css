@@ -6,11 +6,11 @@
 /* Variables */
 :root {
   --ff: "Montserrat", sans-serif;
-  --color-primary: hsl(250, 50%, 90%);
-  /* --color-pre-primary: rgb(238, 236, 249); */
+  --color-primary: #ddd9f2;
+  --color-pre-primary: #faf7ff;
   --color-secondary: hsl(250, 50%, 10%);
-  --color-tertiary: hsl(310, 80%, 20%);
-  --color-accent: hsl(190, 80%, 20%);
+  --color-tertiary: #474554;
+  --color-accent: #aca9bb;
 }
 .dark {
   --color-primary: hsl(250, 50%, 10%);
