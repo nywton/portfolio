@@ -19,6 +19,7 @@
   --color-tertiary: #474554;
   --color-accent: #aca9bb;
 }
+
 .dark {
   --color-primary: hsl(250, 50%, 10%);
   --color-pre-primary: #191339;
@@ -57,7 +58,6 @@ header .logo-container {
   display: flex;
   align-items: center;
   gap: .5rem;
-  transition: background-color .7s ease-in;
 }
 
 header .logo-container svg {
@@ -104,8 +104,8 @@ main .main__img {
   width: 144px;
   height: 144px;
   background-color: var(--color-pre-primary);
-  transition: 0.15s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  transition: 1s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
+  transition: background-color 1s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 main .main__img svg * {
@@ -130,11 +130,11 @@ header {
 
 /* Components */
 
-.btn-secondary {
+.btn-primary {
   text-transform: uppercase;
   color: var(--color-pre-primary);
   letter-spacing: 0.25rem;
-  border: 2px solid var(--color-secondary); 
+  border: 2px solid var(--color-secondary);
   border-radius: 8px;
   padding: 16px 48px;
   text-decoration: none;
@@ -144,11 +144,16 @@ header {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-secondary:hover {
+.btn-primary:hover {
   background-color: var(--color-tertiary);
   border-color: var(--color-tertiary);
   color: var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 #dark {
@@ -182,15 +187,19 @@ header {
 .gap-1 {
   gap: 4px;
 }
+
 .gap-2 {
   gap: 8px;
 }
+
 .gap-3 {
   gap: 12px;
 }
+
 .gap-10 {
   gap: 40px;
 }
+
 .gap-20 {
   gap: 80px;
 }
