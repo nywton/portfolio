@@ -1,9 +1,11 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* logo */
+/* Body font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Logo font */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+/* Reset */
 * {
   padding: 0;
   margin: 0;
@@ -50,7 +52,7 @@ body {
 
 header a {
   font-weight: 600;
-  font-family: "Fredoka", sans-serif !important;
+  font-family: "Fredoka", sans-serif;
   transition: color .7s ease-in;
 }
 
@@ -61,8 +63,8 @@ header .logo-container {
 }
 
 header .logo-container svg {
-  width: 24px;
-  height: 24px;
+  width: 2rem;
+  height: 2rem;
 }
 
 #nav-controls {
@@ -70,18 +72,18 @@ header .logo-container svg {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  padding: 10px;
+  padding: .75rem;
   background-color: var(--color-pre-primary);
 }
 
 #nav-controls svg {
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
 }
 
 #nav-controls svg * {
   stroke: var(--color-secondary);
-  /* fill: var(--color-secondary); */
+  fill: var(--color-secondary);
 }
 
 header .logo-container svg * {
@@ -96,28 +98,28 @@ main {
   align-items: center;
 }
 
-main .main__img {
+main .start_carousell {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  width: 144px;
-  height: 144px;
+  width: 9rem;
+  height: 9rem;
   background-color: var(--color-pre-primary);
   transition: 1s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
   transition: background-color 1s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-main .main__img svg * {
+main .start_carousell svg * {
   stroke: var(--color-tertiary);
 }
 
-main .main__img:hover {
+main .start_carousell:hover {
   background-color: var(--color-primary);
   border: 1px solid var(--color-accent);
 }
 
-main .main__img:hover svg * {
+main .start_carousell:hover svg * {
   stroke: var(--color-accent);
 }
 
@@ -135,8 +137,8 @@ header {
   color: var(--color-pre-primary);
   letter-spacing: 0.25rem;
   border: 2px solid var(--color-secondary);
-  border-radius: 8px;
-  padding: 16px 48px;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
@@ -149,25 +151,9 @@ header {
   border-color: var(--color-tertiary);
   color: var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
-#dark {
-  width: 12px;
-  fill: var(--color-secondary);
-  cursor: pointer;
-  background: var(--color-pre-primary);
-  padding: 8px 11px;
-  border-radius: 20px;
-  box-shadow: 0 2px 2px hsla(var(--hue), 50%, 10%, .3), 0 4px 4px hsla(var(--hue), 50%, 10%, .15);
 }
 
 /* Layout */
-
 .flex {
   display: flex;
   flex-flow: column;
@@ -183,29 +169,11 @@ header {
 }
 
 /* Spacing */
-
-.gap-1 {
-  gap: 4px;
-}
-
-.gap-2 {
-  gap: 8px;
-}
-
-.gap-3 {
-  gap: 12px;
-}
-
 .gap-10 {
   gap: 40px;
 }
 
-.gap-20 {
-  gap: 80px;
-}
-
 /* Visibility */
-
 .hidden {
   display: none;
 }

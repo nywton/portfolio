@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const images = document.querySelectorAll('.main__img svg');
+  const images = document.querySelectorAll('.start_carousell svg');
   let currentIndex = 0;
 
   function showImage(index) {
