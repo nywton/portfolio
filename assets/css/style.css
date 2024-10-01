@@ -43,18 +43,21 @@ body {
   max-width: 1280px;
   height: 100vh;
   height: -webkit-fill-available;
-  transition: background-color 1s ease-in;
+  transition: background-color .7s ease-in;
+  transition: color .7s ease-in;
 }
 
 header a {
   font-weight: 600;
   font-family: "Fredoka", sans-serif !important;
+  transition: color .7s ease-in;
 }
 
 header .logo-container {
   display: flex;
   align-items: center;
   gap: .5rem;
+  transition: background-color .7s ease-in;
 }
 
 header .logo-container svg {
