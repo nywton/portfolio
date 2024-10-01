@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
-  }, 1500);
+  }, 1000);
 });
 
 function dark() {

@@ -3,6 +3,13 @@
 
 /* logo */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 /* Variables */
 :root {
   --ff: "Montserrat", sans-serif;
@@ -53,6 +60,25 @@ header .logo-container {
 header .logo-container svg {
   width: 24px;
   height: 24px;
+}
+
+#nav-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: var(--color-pre-primary);
+}
+
+#nav-controls svg {
+  width: 16px;
+  height: 16px;
+}
+
+#nav-controls svg * {
+  stroke: var(--color-secondary);
+  fill: var(--color-secondary);
 }
 
 header .logo-container svg * {
