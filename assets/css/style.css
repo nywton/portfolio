@@ -20,6 +20,7 @@
   --color-secondary: hsl(250, 50%, 10%);
   --color-tertiary: #474554;
   --color-accent: #aca9bb;
+  --ton-box-shadow: var(--color-primary) 8px 8px 0px -2px, var(--color-tertiary) 8px 8px;
 }
 
 .dark {
@@ -71,9 +72,11 @@ header .logo-container svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   padding: .75rem;
+  border: 2px, solid, var(--color-tertiary);
   background-color: var(--color-pre-primary);
+  box-shadow: var(--ton-box-shadow);
 }
 
 #nav-controls svg {
@@ -102,12 +105,14 @@ main .start_carousell {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 100%;
+  /* border-radius: 100%; */
+  border: 3px solid var(--color-tertiary);
   width: 9rem;
   height: 9rem;
   background-color: var(--color-pre-primary);
   transition: 1s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
   transition: background-color 1s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--ton-box-shadow);
 }
 
 main .start_carousell svg * {
@@ -137,13 +142,14 @@ header {
   color: var(--color-pre-primary);
   letter-spacing: 0.25rem;
   border: 2px solid var(--color-secondary);
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   padding: 1rem 3rem;
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
   background-color: var(--color-secondary);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--ton-box-shadow);
 }
 
 .btn-primary:hover {

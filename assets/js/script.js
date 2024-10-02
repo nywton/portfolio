@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   animateLoading();
-  animateStartIcons();
+  animateStartIcons(1300);
 });
 
 function dark() {
@@ -45,7 +45,7 @@ function animateLoading() {
   );
 }
 
-function animateStartIcons() {
+function animateStartIcons(duration) {
   let currentIndex = 0;
 
   const images = document.querySelectorAll('.start_carousell svg');
@@ -61,6 +61,6 @@ function animateStartIcons() {
   setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
-  }, 1000);
+  }, duration);
 }
 
