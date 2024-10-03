@@ -80,6 +80,8 @@ header .logo-container svg {
 
 .btn-nav {
   padding: .75rem;
+  background-color: var(--color-pre-primary);
+  border-radius: 50%;
 }
 
 #nav-controls svg {
