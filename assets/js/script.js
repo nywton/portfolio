@@ -1,23 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   animateLoading();
-  animateStartIcons(1500);
-  colorTimer(1500);
+  setupCaroussell(1500);
 
-  setupIconsFrameClickEvent();
+  const navButtons = document.querySelectorAll('.t-shadow');
+
+  setTimeout(function() {
+    navButtons.forEach((btn) => {
+      btn.classList.toggle('t-shadow-pressed');
+    })
+  }, 3000);
 });
-
-function toggleDark() {
-  document.body.classList.toggle("dark");
-  toggleVisibility();
-}
-
-function toggleVisibility() {
-  const btnLight = document.getElementById('toggleLight');
-  const btnDark = document.getElementById('toggleDark');
-
-  btnLight.classList.toggle('hidden');
-  btnDark.classList.toggle('hidden');
-}
 
 function animateLoading() {
   gsap.fromTo(
@@ -48,23 +40,33 @@ function animateLoading() {
   );
 }
 
-function animateStartIcons(duration) {
+function setupCaroussell(duration) {
   let currentIndex = 0;
 
   const images = document.querySelectorAll('.start_carousell svg');
 
-  function showImage(index) {
-    images.forEach((img, i) => {
-      img.classList.toggle('hidden', i !== index);
-    });
-  }
+  setupColorTimer(1500);
+  setCarousellClickEvent();
 
-  showImage(currentIndex);
 
   setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+    images.forEach((img, i) => {
+      img.classList.toggle('hidden', i !== currentIndex);
+    });
   }, duration);
+}
+
+// Changes the icons frame backrgound color after a delay
+function setupColorTimer(time) {
+  const colors = ['#ffde88', '#b2c2df', '#fed3f7', '#c8fcea', '#e1bfbc', '#00c6d1', '#def5f6', '#8885ef'];
+  let currentIndex = 0;
+
+  setInterval(function () {
+    currentIndex = (currentIndex + 1) % colors.length;
+    const colorSwitcher = document.getElementById('color-switcher');
+    colorSwitcher.style.backgroundColor = colors[currentIndex];
+  }, time);
 }
 
 function switchColor() {
@@ -78,20 +80,8 @@ function switchColor() {
   });
 }
 
-// Changes the icons frame backrgound color after a delay
-function colorTimer(time) {
-  const colors = ['#ffde88', '#b2c2df', '#fed3f7', '#c8fcea', '#e1bfbc', '#00c6d1', '#def5f6', '#8885ef'];
-  let currentIndex = 0;
 
-  setInterval(function () {
-    currentIndex = (currentIndex + 1) % colors.length;
-    const colorSwitcher = document.getElementById('color-switcher');
-    colorSwitcher.style.backgroundColor = colors[currentIndex];
-  }, time);
-}
-
-
-function setupIconsFrameClickEvent() {
+function setCarousellClickEvent() {
 
   // Active class
   const cssClass = 't-shadow-pressed';
@@ -116,5 +106,18 @@ function setupIconsFrameClickEvent() {
     const currentColor = window.getComputedStyle(myDiv).backgroundColor;
     btnStart.style.backgroundColor = currentColor;
     btnStart.style.color= '#110d26';
+  });
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
+  toggleVisibility();
+}
+
+function toggleVisibility() {
+  const navButtons = document.querySelectorAll('#nav-controls .btn-nav');
+
+  navButtons.forEach((btn) => {
+    btn.classList.toggle('hidden');
   });
 }
