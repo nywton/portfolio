@@ -2,11 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   animateLoading();
   setupCaroussell(1500);
 
-  const navButtons = document.querySelectorAll('.t-shadow');
+  const shadowObjects = document.querySelectorAll('.t-shadow');
 
-  setTimeout(function() {
-    navButtons.forEach((btn) => {
+  setTimeout(function () {
+    shadowObjects.forEach((btn) => {
       btn.classList.toggle('t-shadow-pressed');
+      btn.classList.toggle('radius');
     })
   }, 3000);
 });
@@ -48,7 +49,6 @@ function setupCaroussell(duration) {
   setupColorTimer(1500);
   setCarousellClickEvent();
 
-
   setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
     images.forEach((img, i) => {
@@ -59,7 +59,7 @@ function setupCaroussell(duration) {
 
 // Changes the icons frame backrgound color after a delay
 function setupColorTimer(time) {
-  const colors = ['#ffde88', '#b2c2df', '#fed3f7', '#c8fcea', '#e1bfbc', '#00c6d1', '#def5f6', '#8885ef'];
+  const colors = ['#ffde88', '#b2c2df', '#c8fcea', '#e1bfbc', '#00c6d1', '#f8b05b', '#8885ef'];
   let currentIndex = 0;
 
   setInterval(function () {
@@ -70,12 +70,10 @@ function setupColorTimer(time) {
 }
 
 function switchColor() {
-  const colors = ['#ffde88', '#b2c2df', '#fed3f7', '#c8fcea', '#e1bfbc', '#00c6d1', '#def5f6', '#8885ef'];
   let currentIndex = 0;
 
   document.getElementById('color-switcher').addEventListener('click', function () {
     currentIndex = (currentIndex + 1) % colors.length;
-    this.style.transition = 'background-color 0.5s ease';
     this.style.backgroundColor = colors[currentIndex];
   });
 }
@@ -133,7 +131,9 @@ function setCarousellClickEvent() {
 
     // changes start button color and background
     btnStart.style.backgroundColor = currentColor;
-    btnStart.style.color= '#110d26';
+    btnStart.classList.toggle('radius');
+    carousell.classList.toggle('radius');
+    btnStart.style.color = '#110d26';
   });
 }
 

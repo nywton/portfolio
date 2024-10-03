@@ -108,7 +108,7 @@ header .logo-container svg {
 .btn-nav {
   display: flex;
   padding: .75rem;
-  background-color: var(--color-pre-primary);
+  /* background-color: var(--color-primary); */
   border-radius: 100px;
   min-height: 2rem;
   min-width: 2rem;
@@ -144,7 +144,7 @@ main {
 
 /* Box shadows */
 .t-shadow {
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: var(--ton-box-shadow);
   border: 3px solid var(--color-secondary);
   border-radius: 4px;
@@ -174,8 +174,7 @@ main {
   cursor: pointer;
   font-weight: 600;
   background-color: var(--color-secondary);
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-
+  transition: all 0.3s ease;
 }
 
 /* Start Loading */
@@ -253,6 +252,10 @@ main {
 /* Visibility */
 .hidden {
   display: none;
+}
+
+.radius {
+  border-radius: 100px;
 }
 
 .noselect,
