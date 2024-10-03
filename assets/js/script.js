@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   animateStartIcons(1300);
 });
 
-function dark() {
+function toggleDark() {
   document.body.classList.toggle("dark");
   toggleVisibility();
 }
 
 function toggleVisibility() {
-  const btnLight = document.getElementById('btn-switch-light');
-  const btnDark = document.getElementById('btn-switch-dark');
+  const btnLight = document.getElementById('toggleLight');
+  const btnDark = document.getElementById('toggleDark');
 
   btnLight.classList.toggle('hidden');
   btnDark.classList.toggle('hidden');
@@ -26,7 +26,7 @@ function animateLoading() {
       opacity: 0,
       display: "none",
       duration: .5,
-      delay: 3,
+      delay: 2.2,
     }
   );
 
@@ -39,7 +39,7 @@ function animateLoading() {
     {
       y: 0,
       opacity: 1,
-      duration: 2,
+      duration: 1,
       delay: 0.5,
     }
   );

@@ -17,19 +17,21 @@
   /* --ff: "Montserrat", sans-serif; */
   --ff: 'Avalon';
   --color-primary: #ddd9f2;
+  /* --color-primary: #f2ecff; */
   --color-pre-primary: #faf7ff;
   --color-secondary: hsl(250, 50%, 10%);
   --color-tertiary: #474554;
   --color-accent: #aca9bb;
-  --ton-box-shadow: var(--color-primary) 8px 8px 0px -3px, var(--color-tertiary) 8px 8px;
+  --ton-box-shadow: white 8px 8px 0px -3px, var(--color-secondary) 8px 8px;
+  --ton-box-shadow-hover: transparent 4px 4px 0px -3px, var(--color-tertiary) 4px 4px;
 }
 
 .dark {
   --color-primary: hsl(250, 50%, 10%);
   --color-pre-primary: #191339;
-  --color-secondary: hsl(250, 50%, 90%);
-  --color-tertiary: hsl(310, 80%, 80%);
-  --color-accent: hsl(190, 80%, 80%);
+  --color-secondary: #8984ef;
+  --color-tertiary: #faf7ff;
+  --color-accent: #8984ef;
 }
 
 /* Root tags */
@@ -74,11 +76,10 @@ header .logo-container svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 50%; */
+}
+
+.btn-nav {
   padding: .75rem;
-  border: 2px, solid, var(--color-tertiary);
-  background-color: var(--color-pre-primary);
-  box-shadow: var(--ton-box-shadow);
 }
 
 #nav-controls svg {
@@ -103,33 +104,18 @@ main {
   align-items: center;
 }
 
-main .start_carousell {
+.start_carousell {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-radius: 100%; */
-  border: 4px solid var(--color-tertiary);
   width: 9rem;
   height: 9rem;
   background-color: var(--color-pre-primary);
-  transition: 1s padding ease-out, 0.15s margin ease-out, 0.15s border ease-out;
-  transition: background-color 1s ease, color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: var(--ton-box-shadow);
 }
 
-main .start_carousell svg * {
+.start_carousell svg * {
   stroke: var(--color-tertiary);
 }
-
-main .start_carousell:hover {
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-accent);
-}
-
-main .start_carousell:hover svg * {
-  stroke: var(--color-accent);
-}
-
 
 header {
   display: flex;
@@ -137,32 +123,38 @@ header {
   padding: .75rem;
 }
 
-/* Components */
+/* Components and effects */
+
+/* Box shadows */
+.t-shadow {
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--ton-box-shadow);
+  border: 3px solid var(--color-secondary);
+}
+
+.t-shadow:hover {
+  transform: translate(4px, 4px);
+  box-shadow: var(--ton-box-shadow-hover);
+}
+
+.dark .t-shadow {
+  box-shadow: none;
+}
 
 .btn-primary {
   text-transform: uppercase;
   color: var(--color-pre-primary);
   letter-spacing: 0.25rem;
-  border: 2px solid var(--color-secondary);
-  /* border-radius: 1rem; */
   padding: 1rem 3rem;
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
   background-color: var(--color-secondary);
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: var(--ton-box-shadow);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-tertiary);
-  border-color: var(--color-tertiary);
-  color: var(--color-primary);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  
 }
 
 /* Start Loading */
-
 .loading {
   position: absolute;
   top: 0;
@@ -182,21 +174,21 @@ header {
 #loading-icon {
   height: 150px;
   width: 150px;
-  stroke: white;
+  stroke: var(--color-primary);
   fill-opacity: 0;
   stroke-width: 3px;
-  stroke-dasharray: 4500;
-  animation: draw 8s ease;
+  stroke-dasharray: 4000;
+  animation: draw 20s ease;
 }
 
 #loading-icon svg * {
-  stroke: var(--color-secondary);
-  fill: var(--color-secondary);
+  stroke: var(--color-primary) !important;
+  fill: var(--color-primary);
 }
 
 @keyframes draw {
   0% {
-    stroke-dashoffset: 4500;
+    stroke-dashoffset: 4000;
   }
 
   100% {
@@ -204,15 +196,9 @@ header {
   }
 }
 
-.name-container {
-  height: 30px;
-  overflow: hidden;
-}
-
 /* End Loading */
-
 .logo-name {
-  color: #fff;
+  color: --var(--color-primary);
   font-size: 20px;
   letter-spacing: 12px;
   text-transform: uppercase;
