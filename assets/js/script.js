@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   animateLoading();
-  animateStartIcons(1300);
-  colorTimer(1300);
+  animateStartIcons(1500);
+  colorTimer(1500);
 });
 
 function toggleDark() {
