@@ -68,7 +68,7 @@ header .logo-container {
   align-items: center;
   gap: .5rem;
   font-weight: bold;
-  color: var(--color-tertiary);
+  color: var(--color-secondary);
 }
 
 header .logo-container a {
