@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   animateLoading();
   animateStartIcons(1500);
   colorTimer(1500);
+
+  setupIconsFrameClickEvent();
 });
 
 function toggleDark() {
@@ -88,3 +90,31 @@ function colorTimer(time) {
   }, time);
 }
 
+
+function setupIconsFrameClickEvent() {
+
+  // Active class
+  const cssClass = 't-shadow-pressed';
+
+  const myDiv = document.getElementById('color-switcher');
+  const btnStart = document.getElementById('btn-start');
+
+  myDiv.addEventListener('mousedown', () => {
+    myDiv.classList.add(cssClass);
+  });
+
+  myDiv.addEventListener('mouseup', () => {
+    myDiv.classList.remove(cssClass);
+  });
+
+  // Optional: Handle mouse leave in case the user drags the mouse outside the div
+  myDiv.addEventListener('mouseleave', () => {
+    myDiv.classList.remove(cssClass);
+  });
+
+  myDiv.addEventListener('click', () => {
+    const currentColor = window.getComputedStyle(myDiv).backgroundColor;
+    btnStart.style.backgroundColor = currentColor;
+    btnStart.style.color= '#110d26';
+  });
+}

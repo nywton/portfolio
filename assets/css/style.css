@@ -77,7 +77,8 @@
   --color-tertiary: #474554;
   --color-accent: #8885ef;
   --ton-box-shadow: var(--color-primary) 8px 8px 0px -3px, var(--color-secondary) 8px 8px;
-  --ton-box-shadow-hover: transparent 4px 4px 0px -3px, var(--color-tertiary) 4px 4px;
+  --ton-box-shadow-hover: transparent 6px 6px 0px -3px, var(--color-tertiary) 8px 8px;
+  --ton-box-shadow-pressed: transparent 4px 4px 0px -3px, var(--color-tertiary) 2px 2px;
 }
 
 .dark {
@@ -106,6 +107,12 @@ body {
   height: 100vh;
   height: -webkit-fill-available;
   transition: background-color .5s ease, color .5s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: .75rem;
 }
 
 header .logo-container {
@@ -169,16 +176,15 @@ main {
   width: 9rem;
   height: 9rem;
   background-color: var(--color-pre-primary);
+  cursor: pointer;
+}
+
+.start_carousell:active {
+  background-color: #000;
 }
 
 .start_carousell svg * {
   stroke: #333;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: .75rem;
 }
 
 /* Components and effects */
@@ -192,8 +198,13 @@ header {
 }
 
 .t-shadow:hover {
-  transform: translate(4px, 4px);
+  /* transform: translate(4px, 4px); */
   box-shadow: var(--ton-box-shadow-hover);
+}
+
+.t-shadow-pressed {
+  transform: translate(4px, 4px);
+  box-shadow: var(--ton-box-shadow-pressed) !important;
 }
 
 .dark .t-shadow {
