@@ -1,4 +1,51 @@
 /* Fonts */
+@font-face {
+  font-family: 'Avalon';
+  src: url('/assets/fonts/avalon-light.woff2') format('woff2'),
+    url('/assets/fonts/avalon-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avalon';
+  src: url('/assets/fonts/avalon-regular.woff2') format('woff2'),
+    url('/assets/fonts/avalon-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avalon';
+  src: url('/assets/fonts/avalon-bold.woff2') format('woff2'),
+    url('/assets/fonts/avalon-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avalon';
+  src: url('/assets/fonts/avalon-light-italic.woff2') format('woff2'),
+    url('/assets/fonts/avalon-light-italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Avalon';
+  src: url('/assets/fonts/avalon-regular-italic.woff2') format('woff2'),
+    url('/assets/fonts/avalon-regular-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Avalon';
+  src: url('/assets/fonts/avalon-bold-italic.woff2') format('woff2'),
+    url('/assets/fonts/avalon-bold-italic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
 
 /* Body font */
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
@@ -15,7 +62,7 @@
 /* Variables */
 :root {
   /* --ff: "Montserrat", sans-serif; */
-  --ff: 'Avalon';
+  --ff: 'Avalon', sans-serif;
   --color-primary: #ddd9f2;
   /* --color-primary: #f2ecff; */
   --color-pre-primary: #faf7ff;
@@ -79,9 +126,12 @@ header .logo-container svg {
 }
 
 .btn-nav {
+  display: flex;
   padding: .75rem;
   background-color: var(--color-pre-primary);
-  border-radius: 50%;
+  border-radius: 100px;
+  min-height: 2rem;
+  min-width: 2rem;
 }
 
 #nav-controls svg {
@@ -153,7 +203,7 @@ header {
   font-weight: 600;
   background-color: var(--color-secondary);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  
+
 }
 
 /* Start Loading */
