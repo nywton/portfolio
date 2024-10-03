@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 /* Variables */
 :root {
   /* --ff: "Montserrat", sans-serif; */
@@ -39,7 +44,7 @@
 
 /* === Root tags === */
 
- /*fixes mobile viewport on browsers */
+/*fixes mobile viewport on browsers */
 html {
   height: -webkit-fill-available;
 }
@@ -248,4 +253,14 @@ main {
 /* Visibility */
 .hidden {
   display: none;
+}
+
+.noselect,
+.noselect * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

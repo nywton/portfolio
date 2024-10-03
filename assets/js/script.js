@@ -96,7 +96,18 @@ function setCarousellClickEvent() {
     btnStart.classList.remove(cssClass);
   });
 
+
   carousell.addEventListener('mouseup', () => {
+    carousell.classList.remove(cssClass);
+    btnStart.classList.add(cssClass);
+  });
+
+  carousell.addEventListener('touchstart', () => {
+    carousell.classList.add(cssClass);
+    btnStart.classList.remove(cssClass);
+  });
+
+  carousell.addEventListener('touchend', () => {
     carousell.classList.remove(cssClass);
     btnStart.classList.add(cssClass);
   });
