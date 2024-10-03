@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   animateLoading();
   animateStartIcons(1300);
+  colorTimer(1300);
 });
 
 function toggleDark() {
@@ -62,5 +63,28 @@ function animateStartIcons(duration) {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
   }, duration);
+}
+
+function switchColor() {
+  const colors = ['#ffde88', '#b2c2df', '#fed3f7', '#c8fcea', '#e1bfbc', '#00c6d1', '#def5f6', '#8885ef'];
+  let currentIndex = 0;
+
+  document.getElementById('color-switcher').addEventListener('click', function () {
+    currentIndex = (currentIndex + 1) % colors.length;
+    this.style.transition = 'background-color 0.5s ease';
+    this.style.backgroundColor = colors[currentIndex];
+  });
+}
+
+// Changes the icons frame backrgound color after a delay
+function colorTimer(time) {
+  const colors = ['#ffde88', '#b2c2df', '#fed3f7', '#c8fcea', '#e1bfbc', '#00c6d1', '#def5f6', '#8885ef'];
+  let currentIndex = 0;
+
+  setInterval(function () {
+    currentIndex = (currentIndex + 1) % colors.length;
+    const colorSwitcher = document.getElementById('color-switcher');
+    colorSwitcher.style.backgroundColor = colors[currentIndex];
+  }, time);
 }
 

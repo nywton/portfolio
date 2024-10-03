@@ -65,16 +65,24 @@
   --ff: 'Avalon', sans-serif;
   --color-primary: #ddd9f2;
   /* --color-primary: #f2ecff; */
-  --color-pre-primary: #faf7ff;
+  /* --color-pre-primary: #ffde88; */
+  --color-pre-primary: #b2c2df;
+  /* --color-pre-primary: #fed3f7; */
+  /* --color-pre-primary: #c8fcea; */
+  /* --color-pre-primary: #e1bfbc; */
+  /* --color-pre-primary: #00c6d1; */
+  /* --color-pre-primary: #def5f6; */
+  /* --color-pre-primary: #8885ef; */
   --color-secondary: hsl(250, 50%, 10%);
   --color-tertiary: #474554;
-  --color-accent: #aca9bb;
-  --ton-box-shadow: white 8px 8px 0px -3px, var(--color-secondary) 8px 8px;
+  --color-accent: #8885ef;
+  --ton-box-shadow: var(--color-primary) 8px 8px 0px -3px, var(--color-secondary) 8px 8px;
   --ton-box-shadow-hover: transparent 4px 4px 0px -3px, var(--color-tertiary) 4px 4px;
 }
 
 .dark {
-  --color-primary: hsl(250, 50%, 10%);
+  --color-primary: #110d26;
+  --color-pre-primary: #3b3853;
   --color-pre-primary: #191339;
   --color-secondary: #8984ef;
   --color-tertiary: #faf7ff;
@@ -97,21 +105,23 @@ body {
   max-width: 1280px;
   height: 100vh;
   height: -webkit-fill-available;
-  transition: background-color .7s ease-in;
-  transition: color .7s ease-in;
-}
-
-header a {
-  font-weight: 600;
-  font-family: "Fredoka", sans-serif;
-  transition: color .7s ease-in;
-  color: var(--color-tertiary);
+  transition: background-color .5s ease, color .5s ease;
 }
 
 header .logo-container {
   display: flex;
   align-items: center;
   gap: .5rem;
+  font-weight: bold;
+  color: var(--color-tertiary);
+}
+
+header .logo-container a {
+  transition: color .5s ease;
+}
+
+header .logo-container svg * {
+  fill: var(--color-accent);
 }
 
 header .logo-container svg {
@@ -125,15 +135,6 @@ header .logo-container svg {
   align-items: center;
 }
 
-.btn-nav {
-  display: flex;
-  padding: .75rem;
-  background-color: var(--color-pre-primary);
-  border-radius: 100px;
-  min-height: 2rem;
-  min-width: 2rem;
-}
-
 #nav-controls svg {
   width: 1rem;
   height: 1rem;
@@ -144,8 +145,13 @@ header .logo-container svg {
   fill: var(--color-secondary);
 }
 
-header .logo-container svg * {
-  fill: var(--color-accent);
+.btn-nav {
+  display: flex;
+  padding: .75rem;
+  background-color: var(--color-pre-primary);
+  border-radius: 100px;
+  min-height: 2rem;
+  min-width: 2rem;
 }
 
 main {
@@ -166,7 +172,7 @@ main {
 }
 
 .start_carousell svg * {
-  stroke: var(--color-tertiary);
+  stroke: #333;
 }
 
 header {
@@ -182,6 +188,7 @@ header {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: var(--ton-box-shadow);
   border: 3px solid var(--color-secondary);
+  border-radius: 4px;
 }
 
 .t-shadow:hover {
@@ -191,13 +198,14 @@ header {
 
 .dark .t-shadow {
   box-shadow: none;
+  border: none;
 }
 
 .btn-primary {
   text-transform: uppercase;
-  color: var(--color-pre-primary);
+  color: var(--color-primary);
   letter-spacing: 0.25rem;
-  padding: 1rem 3rem;
+  padding: .75rem 3rem;
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
