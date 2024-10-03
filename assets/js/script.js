@@ -98,8 +98,10 @@ function setCarousellClickEvent() {
 
 
   carousell.addEventListener('mouseup', () => {
-    carousell.classList.remove(cssClass);
-    btnStart.classList.add(cssClass);
+    setTimeout(function () {
+      carousell.classList.remove(cssClass);
+      btnStart.classList.add(cssClass);
+    }, 1000)
   });
 
   carousell.addEventListener('touchstart', () => {
@@ -109,7 +111,10 @@ function setCarousellClickEvent() {
 
   carousell.addEventListener('touchend', () => {
     carousell.classList.remove(cssClass);
-    btnStart.classList.add(cssClass);
+    // btnStart.classList.add(cssClass);
+    setTimeout(function () {
+      btnStart.classList.add(cssClass);
+    }, 1000)
   });
 
   // Optional: Handle mouse leave in case the user drags the mouse outside the div
