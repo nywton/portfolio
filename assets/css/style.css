@@ -1,7 +1,7 @@
 /* Fonts */
 
 /* Body font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
 /* Logo font */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
@@ -14,13 +14,14 @@
 
 /* Variables */
 :root {
-  --ff: "Montserrat", sans-serif;
+  /* --ff: "Montserrat", sans-serif; */
+  --ff: 'Avalon';
   --color-primary: #ddd9f2;
   --color-pre-primary: #faf7ff;
   --color-secondary: hsl(250, 50%, 10%);
   --color-tertiary: #474554;
   --color-accent: #aca9bb;
-  --ton-box-shadow: var(--color-primary) 8px 8px 0px -2px, var(--color-tertiary) 8px 8px;
+  --ton-box-shadow: var(--color-primary) 8px 8px 0px -3px, var(--color-tertiary) 8px 8px;
 }
 
 .dark {
@@ -55,6 +56,7 @@ header a {
   font-weight: 600;
   font-family: "Fredoka", sans-serif;
   transition: color .7s ease-in;
+  color: var(--color-tertiary);
 }
 
 header .logo-container {
@@ -106,7 +108,7 @@ main .start_carousell {
   justify-content: center;
   align-items: center;
   /* border-radius: 100%; */
-  border: 3px solid var(--color-tertiary);
+  border: 4px solid var(--color-tertiary);
   width: 9rem;
   height: 9rem;
   background-color: var(--color-pre-primary);
