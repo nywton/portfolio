@@ -88,6 +88,8 @@ function setCarousellClickEvent() {
 
   const carousell = document.getElementById('color-switcher');
   const btnStart = document.getElementById('btn-start');
+  // all items that changes color dinamicaly
+  const dinamicColorItems = document.querySelectorAll('.dinamic-color');
 
   carousell.addEventListener('mousedown', () => {
     carousell.classList.add(cssClass);
@@ -104,8 +106,16 @@ function setCarousellClickEvent() {
     carousell.classList.remove(cssClass);
   });
 
+  // Change color theme on click
   carousell.addEventListener('click', () => {
     const currentColor = window.getComputedStyle(carousell).backgroundColor;
+
+    //  update background from dinamic-color classes
+    dinamicColorItems.forEach((dinItem) => {
+      dinItem.style.backgroundColor = currentColor;
+    });
+
+    // changes start button color and background
     btnStart.style.backgroundColor = currentColor;
     btnStart.style.color= '#110d26';
   });
