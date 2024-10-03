@@ -86,24 +86,26 @@ function setCarousellClickEvent() {
   // Active class
   const cssClass = 't-shadow-pressed';
 
-  const myDiv = document.getElementById('color-switcher');
+  const carousell = document.getElementById('color-switcher');
   const btnStart = document.getElementById('btn-start');
 
-  myDiv.addEventListener('mousedown', () => {
-    myDiv.classList.add(cssClass);
+  carousell.addEventListener('mousedown', () => {
+    carousell.classList.add(cssClass);
+    btnStart.classList.remove(cssClass);
   });
 
-  myDiv.addEventListener('mouseup', () => {
-    myDiv.classList.remove(cssClass);
+  carousell.addEventListener('mouseup', () => {
+    carousell.classList.remove(cssClass);
+    btnStart.classList.add(cssClass);
   });
 
   // Optional: Handle mouse leave in case the user drags the mouse outside the div
-  myDiv.addEventListener('mouseleave', () => {
-    myDiv.classList.remove(cssClass);
+  carousell.addEventListener('mouseleave', () => {
+    carousell.classList.remove(cssClass);
   });
 
-  myDiv.addEventListener('click', () => {
-    const currentColor = window.getComputedStyle(myDiv).backgroundColor;
+  carousell.addEventListener('click', () => {
+    const currentColor = window.getComputedStyle(carousell).backgroundColor;
     btnStart.style.backgroundColor = currentColor;
     btnStart.style.color= '#110d26';
   });
